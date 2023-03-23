@@ -7,7 +7,7 @@ export default function App() {
         Calculator
       </h1>
 
-      <div className="flex flex-col w-80 mx-auto h-[500px] border-2 border-black rounded p-3 shadow-md bg-cyan-900">
+      <div className="flex flex-col w-80 mx-auto h-[500px] border-2 border-black rounded shadow-md bg-cyan-900">
         <div className="h-1/3 bg-cyan-900 w-full">
           a
         </div>
