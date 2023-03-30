@@ -16,7 +16,7 @@ describe('Teste do componente App', () => {
     expect(screen.getByText('Calculator')).toBeInTheDocument();
   });
 
-  it('Deve somar 12 + 12 e exibir o resultado corretamente', async () => {
+  it('Deve somar 12 + 12 e 24 corretamente', async () => {
     // Clique nos botões para inserir os números e operador
     const button1 = screen.getByTestId('1');
     fireEvent.click(button1);
