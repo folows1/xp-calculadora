@@ -5,40 +5,56 @@ export default function App() {
   const [num2, setNum2] = useState(0)
   const [operator, setOperator] = useState()
   const [result, setResult] = useState(0)
+  const [telaOperacao, setTelaOperacao] = useState('')
 
   function inputNum(numberP) {
-    if (num === "c") {
-      setNum(num)
-    } else if (num === 0) {
+    numberP = numberP.toString()
+    if (num === 0) {
       setNum(numberP)
+      setTelaOperacao(telaOperacao + numberP)
     } else {
-      setNum(num + numberP.toString())
+      setNum(num + numberP)
+      setTelaOperacao(telaOperacao + numberP)
     }
   }
 
   function clear() {
     setNum(0)
+    setNum2(0)
+    setTelaOperacao('')
     setResult(0)
   }
 
   function selectOperator(op) {
-    var aux = op
-    console.log(aux)
-    setOperator(aux)
-    setNum2(num)
-    setNum(0)
+    let aux = op
+    let aux2 = telaOperacao.length
+
+    if (telaOperacao.charAt(aux2 - 1) === '+' || telaOperacao.charAt(aux2 - 1) === '-' ||
+      telaOperacao.charAt(aux2 - 1) === '*' || telaOperacao.charAt(aux2 - 1) === '/') {
+      setTelaOperacao(telaOperacao.substring(0, aux2 - 1) + aux)
+    } else {
+      setOperator(aux)
+      setNum2(num)
+      setNum(0)
+      setTelaOperacao(`${telaOperacao}${aux}`)
+    }
+
   }
 
   function calculate() {
+    let newResult = 0
     if (operator === '+') {
-      setResult(parseFloat(num2) + parseFloat(num))
+      newResult = parseFloat(num2) + parseFloat(num)
     } else if (operator === '-') {
-      setResult(parseFloat(num2) - parseFloat(num))
+      newResult = parseFloat(num2) - parseFloat(num)
     } else if (operator === '/') {
-      setResult(parseFloat(num2) / parseFloat(num))
+      newResult = parseFloat(num2) / parseFloat(num)
     } else {
-      setResult(parseFloat(num2) * parseFloat(num))
+      newResult = parseFloat(num2) * parseFloat(num)
     }
+    setResult(prevResult => prevResult + newResult)
+    setNum2(newResult)
+    setNum(0)
   }
 
   return (
@@ -50,9 +66,9 @@ export default function App() {
           </p>
           <div className="h-full w-full pt-14 pb-7 flex flex-col items-end pr-3 min-h-[140px]">
             <div className="text-white text-sm">
-              {num}
+              {telaOperacao}
             </div>
-            <div className="text-white text-3xl font-bold">
+            <div className="text-white text-3xl font-bold" id="result" data-testid="result">
               {result}
             </div>
           </div>
@@ -68,8 +84,8 @@ export default function App() {
           </div>
 
           <div className="w-full flex flex-row justify-between">
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(1)}>1</div>
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(2)}>2</div>
+            <div id="1" data-testid="1" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(1)}>1</div>
+            <div id="2" data-testid="2" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(2)}>2</div>
             <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(3)}>3</div>
             <div className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('x')}>x</div>
           </div>
@@ -78,7 +94,7 @@ export default function App() {
             <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(4)}>4</div>
             <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(5)}>5</div>
             <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(6)}>6</div>
-            <div className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('+')}>+</div>
+            <div id="+" data-testid="+" className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('+')}>+</div>
           </div>
 
           <div className="w-full flex flex-row justify-between">
@@ -94,7 +110,7 @@ export default function App() {
                 0
               </div>
             </div>
-            <div className="w-1/4 bg-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={calculate}>=</div>
+            <div id="=" data-testid="=" className="w-1/4 bg-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={calculate}>=</div>
           </div>
         </div>
       </div>
