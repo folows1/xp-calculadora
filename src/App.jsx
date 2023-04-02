@@ -80,33 +80,33 @@ export default function App() {
 
           <div className="w-full flex flex-row justify-between">
             <div className="w-1/4 text-orange-400 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={clear}>C</div>
-            <div className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('/')}>/</div>
+            <div id="/" data-testid="/" className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('/')}>/</div>
           </div>
 
           <div className="w-full flex flex-row justify-between">
             <div id="1" data-testid="1" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(1)}>1</div>
             <div id="2" data-testid="2" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(2)}>2</div>
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(3)}>3</div>
-            <div className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('x')}>x</div>
+            <div id="3" data-testid="3" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(3)}>3</div>
+            <div id="x" data-testid="x" className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('x')}>x</div>
           </div>
 
           <div className="w-full flex flex-row justify-between">
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(4)}>4</div>
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(5)}>5</div>
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(6)}>6</div>
+            <div id="4" data-testid="4" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(4)}>4</div>
+            <div id="5" data-testid="5" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(5)}>5</div>
+            <div id="6" data-testid="6" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(6)}>6</div>
             <div id="+" data-testid="+" className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('+')}>+</div>
           </div>
 
           <div className="w-full flex flex-row justify-between">
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(7)}>7</div>
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(8)}>8</div>
-            <div className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(9)}>9</div>
-            <div className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('-')}>-</div>
+            <div id="7" data-testid="7" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(7)}>7</div>
+            <div id="8" data-testid="8" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(8)}>8</div>
+            <div id="9" data-testid="9" className="w-1/4 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(9)}>9</div>
+            <div id="-" data-testid="-" className="w-1/4 text-cyan-500 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => selectOperator('-')}>-</div>
           </div>
 
           <div className="w-full flex flex-row justify-between">
             <div className="w-3/4 flex justify-center">
-              <div className="w-1/3 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(0)}>
+              <div id="0" data-testid="0" className="w-1/3 text-2xl text-center px-2 py-4 cursor-pointer hover:bg-sky-900" onClick={() => inputNum(0)}>
                 0
               </div>
             </div>
