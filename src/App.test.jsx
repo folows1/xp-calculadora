@@ -203,7 +203,7 @@ describe('Teste do componente App', () => {
       expect(result.textContent).toBe('527');
     })
   
-    it('Deve subtrair 467691 - 479501 e o resultado deverá mostrar -2255 corretamente', async () => {
+    it('Deve subtrair 51093 - 853348 e o resultado deverá mostrar -2255 corretamente', async () => {
       
       const array1 = ['5','1','0','9','3'];
       const array2 = ['5','3','3','4','8'];
@@ -229,7 +229,7 @@ describe('Teste do componente App', () => {
       expect(result.textContent).toBe('-2255');
     })
   
-    it('Deve subtrair 467691 - 479501 e o resultado deverá mostrar -2255 corretamente', async () => {
+    it('Deve subtrair 460511 - 681301 e o resultado deverá mostrar -220790 corretamente', async () => {
       
       const array1 = ['4','6','0','5','1','1'];
       const array2 = ['6','8','1','3','0','1'];
@@ -298,7 +298,7 @@ describe('Teste do componente App', () => {
       expect(result.textContent).toBe('816');
     })
   
-    it('Deve multiplicar 544 + 620 e o resultado deverá mostrar 337280 corretamente', async () => {
+    it('Deve multiplicar 544 x 620 e o resultado deverá mostrar 337280 corretamente', async () => {
       const button1 = screen.getByTestId('5');
       fireEvent.click(button1);
       const button2 = screen.getByTestId('4');
@@ -324,7 +324,7 @@ describe('Teste do componente App', () => {
       expect(result.textContent).toBe('337280');
     })
   
-    it('Deve multiplicar 30736 + 46802 e o resultado deverá mostrar 1438506272 corretamente', async () => {
+    it('Deve multiplicar 30736 x 46802 e o resultado deverá mostrar 1438506272 corretamente', async () => {
       
       const array1 = ['3','0','7','3','6'];
       const array2 = ['4','6','8','0','2'];
@@ -350,7 +350,7 @@ describe('Teste do componente App', () => {
       expect(result.textContent).toBe('1438506272');
     })
   
-    it('Deve multiplicar 624256 + 501929 e o resultado deverá mostrar 313332189824 corretamente', async () => {
+    it('Deve multiplicar 624256 x 501929 e o resultado deverá mostrar 313332189824 corretamente', async () => {
       
       const array1 = ['6','2','4','2','5','6'];
       const array2 = ['5','0','1','9','2','9'];
@@ -444,7 +444,7 @@ describe('Teste do componente App', () => {
       expect(result.textContent).toBe('1.888');
     })
   
-    it('Deve dividir 25625 + 25625 e o resultado deverá mostrar 1 corretamente', async () => {
+    it('Deve dividir 25625 / 25625 e o resultado deverá mostrar 1 corretamente', async () => {
       
       const array1 = [2,5,6,2,5];
       
